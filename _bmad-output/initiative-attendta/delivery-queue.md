@@ -13,7 +13,8 @@ The GitHub issues were **not** updated for the demo rescope; until someone syncs
 and the `tickets.toml` entries on branch `docs/demo-frontend-replan` are the current order.
 The eight capability epics stay local; do not create duplicate epic issues.
 
-[delivery-waves.md](delivery-waves.md) and
+Current dependency graphs: [dependency-graphs-demo-first.md](dependency-graphs-demo-first.md).
+[delivery-waves.md](delivery-waves.md) and the superseded
 [dependency-graphs-frontend-first.md](dependency-graphs-frontend-first.md) predate the demo
 rescope; use them for background only.
 

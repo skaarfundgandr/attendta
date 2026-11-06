@@ -119,7 +119,7 @@ The bullets below stand where the demo rescope above does not replace them. It r
 - spec — `docsss/AttendTa-System-Specification.md` (SPEC v2.1, owner decisions 2026-11-04), §20 acceptance coverage
 - architecture spine — `_bmad-output/initiative-attendta/architecture-attendta/architecture-attendta.md`, AD-1..AD-18, Consistency Conventions, Stack, Capability → Architecture Map, Deferred
 - architecture source — `docsss/architecture.md` v1.1, distilled into the spine
-- dependency graphs — `_bmad-output/initiative-attendta/dependency-graphs.md`, epic and per-epic story prerequisites, critical path
+- dependency graphs — `_bmad-output/initiative-attendta/dependency-graphs-demo-first.md` (current, 2026-11-06 demo rescope: demo-phase graph, register add/remove map, layers, critical path, per-epic graphs); `dependency-graphs-frontend-first.md` and `dependency-graphs.md` are superseded history
 - delivery queue — `_bmad-output/initiative-attendta/delivery-queue.md`, live claimable-ticket queue, frontend-slice order and tracked mock removals (2026-11-06)
 - finale test cases — `_bmad-output/initiative-attendta/finale-test-cases.md`, important automated cases and manual acceptance mapping for the finale (2026-11-06)
 - design — `docs/DESIGN.md` (visual authority for frontend slices), `docsss/design.md` (visual specification), `_bmad-output/initiative-attendta/ux-attendta/DESIGN.md`

@@ -38,7 +38,7 @@ The WBS spells Member 3 **Sinco**; the [BMAD ownership addendum](prd-attendta/ad
 
 The planned epic order is **1 → 2 → 3 → 4 → 5 → 6 → 7 → 8**. This is a planning order, not a rule that every epic must wait for the preceding one: the dependency graph notes, for example, that Epic 5 does not wait for Epic 4. The owner tables below group stories by module and are not a story execution order.
 
-The existing [BMAD dependency graphs](dependency-graphs.md) contain the per-epic diagrams, cross-epic dependencies and critical path. They describe the ticket tree at commit `420f72c`; check each story's `after` field and the current BMAD ticket status before starting work. The graph's earliest-start waves are reproduced here for convenience. Stories in a wave can start in parallel only when their prerequisites and applicable epic gates are met; the waves do not indicate completion or assignment.
+The current dependency graphs are [dependency-graphs-demo-first.md](dependency-graphs-demo-first.md) (2026-11-06 demo rescope). The original [BMAD dependency graphs](dependency-graphs.md) below describe the ticket tree at commit `420f72c` and are history; check each story's `after` field and the current BMAD ticket status before starting work. The graph's earliest-start waves are reproduced here for convenience. Stories in a wave can start in parallel only when their prerequisites and applicable epic gates are met; the waves do not indicate completion or assignment.
 
 | Wave | Stories |
 |---|---|

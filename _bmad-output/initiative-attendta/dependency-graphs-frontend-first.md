@@ -1,5 +1,7 @@
 # AttendTa — frontend-first dependency graphs
 
+> Superseded 2026-11-06 by the demo rescope in [delivery-queue.md](delivery-queue.md): 1.12 became the closing demo rehearsal 8.15, 1.13 starts first, 5.11 and 2.13 no longer depend on each other, and 2.11 moved to the finale. Run `tickets.py status` for current edges.
+
 Snapshot: **6 November 2026**, planning baseline `45d1c20` and wave guide `e33c5dd`.
 This is a separate, current companion to [dependency-graphs.md](dependency-graphs.md).
 The original document is preserved; its archived graphs are not the current execution plan.

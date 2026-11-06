@@ -4,7 +4,7 @@ type: story
 title: "Frontend account and membership access dialogs"
 parent: epic-administration
 covers: [R1, R2, R3, R4, R6]
-after: [3, 1.13, 2.13]
+after: [3, "1.13"]
 hitl: false
 risk: medium
 tracker_id: "149"
@@ -16,19 +16,21 @@ tracker_status: backlog
 
 ## Description
 
-Complete account/member access presentation using the real #54 impact preview and existing account/role lists. Reuse 2.12/2.13's centered-editor action seam; clearly distinguish account access from membership eligibility. Provide reason, consequence, blocked last-admin and reactivation states through the 1.13 prototype mechanism until 5.4–5.7 are real. Missing mutations are conspicuous simulations, never real changes or session workarounds. Own administration/status partials, not the Member editor or shared dialog primitive. Use impeccable for implementation, critique and polish.
+Complete the account and membership access screens on the real 5.3 impact preview and the existing accounts list: deactivate and reactivate dialogs with a required reason, the consequence, and the blocked last-active-Administrator state, keeping account access distinct from membership eligibility. 5.11 owns these actions as their own partials: account actions in the Accounts list rows and membership actions in the Members list rows, outside the Member edit form that 2.13 turns into a dialog. Until 5.4–5.7 exist, the commands run on demo data (M-14, M-15) and the lists show the changed state for the session. The preview's promise of a deactivation action is met by this action. Follow docs/DESIGN.md.
 
 ## Requirements
 
-Verify: An authorized operator previews upcoming affected registrations, sees the required-reason/last-admin explanations and can inspect deactivate/reactivate states without any fake real-record mutation. Member and account restrictions remain distinct on desktop, keyboard and phone layouts.
+Verify: An Administrator previews an account's affected registrations, deactivates it with a reason and reactivates it; an Officer deactivates and reactivates a membership with a reason; an empty reason is refused; the last active Administrator shows the blocked explanation; the lists show the changed state; nothing on screen says the data is demo data. Account and membership states stay distinct on desktop and phone width.
 
 ## References
 
 - parent — _bmad-output/initiative-attendta/tickets/epic-administration/epic-administration.md
 - docs/DESIGN.md
 - _bmad-output/initiative-attendta/delivery-queue.md
+- _bmad-output/initiative-attendta/demo-mock-register.md
 
 ## Notes
 
-- Frontend only: use impeccable for implementation, rendered critique and polish. Build/CSS plus reason/preview/keyboard smoke, not a new broad admin suite.
+- Demo phase (2026-11-06 demo rescope): frontend only. Use the real backend where a service method exists and demo data per `demo-mock-register.md` (rows M-14, M-15) where it does not; nothing on screen may show that data is demo data. Add or fill this ticket's register rows in the same pull request.
+- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.
 - The backend account and membership mutation tickets serialize their shared administration source changes; this is a code-boundary dependency, not a permanent human/module assignment.

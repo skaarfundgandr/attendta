@@ -16,14 +16,19 @@ tracker_status: backlog
 
 ## Description
 
-Use 1.13's fixture register to replace/remove every required mock-backed source and simulated mutation with its accountable real implementation. Verify My Events/passes/attendance, scanner, completion, certificate review/issue/download, access changes and reports against one coherent database. Remove prototype routes/providers from runtime wiring, keep only isolated test fixtures, and refuse any release configuration enabling prototype mode. This is a functional integration gate, not a frontend redesign or a claim that the final test suite already passed.
+Use `demo-mock-register.md`: confirm every row M-02 to M-15 is `removed` by its integration ticket and finish any that is not, then delete the demo store, the demo data folder, the `DemoData:Enabled` switch and its registration (M-01) and set M-01 removed. Verify My Events, passes, attendance, scanner, completion, certificate review, issue and download, access changes and reports against one coherent database. Keep only isolated test fixtures in the test projects. This is a functional integration gate, not a frontend redesign or a claim that the final test suite already passed.
 
 ## Requirements
 
-Verify: The fixture register has no unresolved required surface, release startup cannot enable fixture providers, and a real member goes from approved account through registration/pass/check-in/completion to a retained certificate and matching report/audit, with no manual SQL state workaround.
+Verify: Every register row shows `removed` with its commit; a search of the code finds no register id and no demo data code; starting the app with `DemoData__Enabled=true` changes nothing; a real member goes from approved account through registration, pass, check-in and completion to a retained certificate and matching report and audit, with no manual SQL state workaround.
 
 ## References
 
 - parent — _bmad-output/initiative-attendta/tickets/epic-release-acceptance/epic-release-acceptance.md
 - _bmad-output/initiative-attendta/delivery-queue.md
 - _bmad-output/initiative-attendta/finale-test-cases.md
+- _bmad-output/initiative-attendta/demo-mock-register.md
+
+## Notes
+
+- Removes demo data M-01 (2026-11-06 demo rescope): delete the demo store, the DemoData:Enabled switch, the demo data folder and their registration; set M-01 to removed with the commit in demo-mock-register.md.

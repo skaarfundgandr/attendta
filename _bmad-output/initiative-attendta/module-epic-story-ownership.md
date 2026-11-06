@@ -7,12 +7,14 @@ using one prioritized shared queue.** Whoever is available claims the next unblo
 updates its status before editing and hands it to review. No named person below owns all future
 work in a module. Human approval/environment contacts remain contacts, not implementation lanes.
 
-Use [delivery-queue.md](delivery-queue.md) for the current frontend-first order, claim protocol,
-prototype replacement responsibilities and finale. The numeric `queue` and `phase` in each
-`tickets.toml` order open work; the GitHub issue is the live claim/status source.
+Use [delivery-queue.md](delivery-queue.md) for the current demo-first order, claim protocol,
+demo data removal responsibilities ([demo-mock-register.md](demo-mock-register.md)) and finale.
+The numeric `queue` and `phase` in each `tickets.toml` order open work; the GitHub issue is the
+live claim/status source once it is synced with the 2026-11-06 demo rescope.
 
-The architecture's code/table writers and shared service boundaries still apply. Impeccable is
-required for frontend/UI-facing implementation, critique and polish only, not backend/test work.
+The architecture's code/table writers and shared service boundaries still apply. Since the
+2026-11-06 demo rescope, Impeccable critique and polish run only in 8.15 (demo rehearsal),
+2.11 and 8.12 (finale), not on each frontend ticket.
 Historical assignees and the WBS mapping below are preserved for attribution, **not dispatch**.
 
 ## Historical WBS mapping and original baseline waves

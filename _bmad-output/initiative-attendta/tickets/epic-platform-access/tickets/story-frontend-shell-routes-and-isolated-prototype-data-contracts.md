@@ -3,7 +3,7 @@ id: 13
 type: story
 title: "Frontend shell routes and isolated prototype data contracts"
 parent: epic-platform-access
-after: [12]
+after: [9]
 hitl: false
 risk: medium
 tracker_id: "136"
@@ -15,20 +15,22 @@ tracker_status: backlog
 
 ## Description
 
-Prepare the shared role-appropriate navigation, route skeletons and typed screen contracts for My Events/passes/history, the scanner, certificate ledger/viewer and reports from 1.12. Preserve Razor/Tailwind, the current shell and docs/DESIGN.md. Publish the route/partial/data-source and source-file boundary map in delivery-queue.md before handing off independent surfaces. Provide one explicitly enabled Development-only fixture mechanism with a visible prototype notice, no real writes and no silent fallback from failing real services. Ready backend sources stay real; release startup must refuse fixture mode. Prepare feature-scoped asset seams so later UI tickets do not all edit the shell, Startup.DI.cs or global JavaScript. Use impeccable for implementation, critique and final polish.
+After a short inventory of the current routes and screens against docs/DESIGN.md, prepare the shared role-appropriate navigation, a route for every screen the demo needs (My Events with passes, attendance and certificates; the officer event dossier; the door scanner; the certificate ledger and viewer; the participation report; the account and membership access dialogs) and typed screen contracts. Build the demo data seam from demo-mock-register.md row M-01: the DemoData:Enabled switch read in any environment and off in committed settings; one in-memory demo store keyed by real record ids that holds the shared demo state several surfaces read (event check-in open and completed state, pass tokens, attendance records, certificate reviews and issues, account and membership status); one WebApp folder for demo providers with a registration file per surface, all called from one method, so slices do not edit the same lines; and a start-up seed on real records so every demo screen opens populated: a published event with check-in open and confirmed registrations, a started event ready to complete, and a completed event with check-ins (one invalidated), a pending, a declined and an issued certificate. It also provides the two event-state demo commands several screens call, open/close check-in (M-04) and complete event (M-09), plus two shared partials: the event selector the scanner, ledger and report use, and the open/close check-in control the dossier and scanner use. Surface tickets add their own provider methods over this store; they do not change its shape without a note in the register. Write the route, partial, contract, real-versus-demo source and file-boundary map into the register before the five surface tickets start. Prepare feature-scoped asset seams so later UI tickets do not all edit the shell, Startup.DI.cs or global JavaScript. Preserve Razor/Tailwind, the current shell and docs/DESIGN.md.
 
 ## Requirements
 
-Verify: Each approved route opens an authorized shell rather than a dead link; the route and model contracts identify real versus fixture-backed sources and the ticket that will replace each fixture. Fixture mode cannot run outside Development and simulated decisions cannot mutate real records. Five independent surface tickets can start after this handoff.
+Verify: Every new navigation link opens an authorized screen shell for the right role, not a dead link. With DemoData__Enabled=true the seeded screens open populated and nothing rendered says the data is demo data; with it unset the same screens show their normal empty state and the existing test suites still pass. No demo command writes SQL rows, stored files or Activity Log entries. The register lists each screen's real and demo sources with its removing ticket, and the five demo-critical surface tickets can start.
 
 ## References
 
 - parent — _bmad-output/initiative-attendta/tickets/epic-platform-access/epic-platform-access.md
 - docs/DESIGN.md
 - _bmad-output/initiative-attendta/delivery-queue.md
+- _bmad-output/initiative-attendta/demo-mock-register.md
 
 ## Notes
 
-- Frontend only: load impeccable before implementation; critique rendered desktop/mobile surfaces and polish before review.
-- Development checks: build, css:build and a short route/keyboard smoke check. Add only a focused fixture-mode isolation guard now; broad acceptance automation belongs to the finale.
-- The final real-data integration gate is 8.11; prototype delivery never closes the existing functional integration tickets.
+- Demo phase (2026-11-06 demo rescope): frontend only. Use the real backend where a service method exists and demo data per demo-mock-register.md (rows M-01, M-04, M-09) where it does not; nothing on screen may show that data is demo data. Add or fill this ticket's register rows in the same pull request.
+- Done check: dotnet build, npm run css:build when views or styles change, and one look at the changed screen with DemoData__Enabled=true. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.
+- Decision: 2026-11-06 — demo rescope: no longer waits on the old 1.12 walkthrough (now the 8.15 demo rehearsal) and absorbs its route inventory; the Development-only, visibly labelled fixture mechanism is replaced by the demo data rules in demo-mock-register.md. The title is kept to match issue #136.
+- The final real-data integration gate is 8.11; demo-phase delivery never closes the existing functional integration tickets.

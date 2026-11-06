@@ -16,19 +16,20 @@ tracker_status: backlog
 
 ## Description
 
-Build DESIGN screen 14 using the 1.13 shell/contracts: event selection, open/paused control, camera surface, persistent success/duplicate/invalid/unavailable outcomes, manual name/student-number lookup with explicit Check in, and invalidation reason/confirmation. Prototype outcomes use isolated Development-only fixtures and never record real attendance. Prepare separate camera/manual adapters so 4.4 and 4.5 can wire them without racing on one script; 4.2/4.3/4.6 supply real commands later. Serve all assets locally. Use impeccable for implementation, critique and polish.
+Build DESIGN screen 14 on the 1.13 shell: event selection, open/closed check-in control, live camera decoding with a locally served browser QR decoder (no CDN), persistent success, repeat, invalid, closed and camera-unavailable outcomes, manual name/student-number lookup with an explicit Check in, and attendance invalidation with reason and confirmation. The camera and manual adapters are separate files that post to the check-in contract; until 4.2, 4.3, 4.5 and 4.6 exist that contract is served by demo data (M-05, M-06, M-07; the open/close control calls 1.13's M-04 command), and a pass from 4.10 is matched against demo-store tokens. 4.4 and 4.5 later point the adapters at the real endpoints. Searching or viewing never records attendance. Serve all assets locally. The 4.10 pass cards draw these same demo-store tokens, and the 4.12 attendance history and 7.4 report read the check-ins this scanner writes to the demo store. The event selector and the open/close check-in control are the shared partials from 1.13.
 
 ## Requirements
 
-Verify: An Officer can inspect camera-denied, closed, successful, duplicate, invalid and manual-lookup scenarios on desktop and 390px width. Search/view alone causes no write, fixture outcomes are visibly simulations, and controls work by keyboard with readable persistent feedback.
+Verify: On localhost an Officer opens the scanner for a published event with check-in open, scans a QR that encodes a seeded demo-store pass token with the laptop camera and sees the member's name and student number; a second scan shows the original check-in time; an unknown code, a closed window and a denied camera each show their outcome; manual lookup finds a confirmed participant and checks them in; invalidation needs a reason; nothing on screen says the data is demo data; the page works by keyboard at desktop and 390px width.
 
 ## References
 
 - parent — _bmad-output/initiative-attendta/tickets/epic-check-in/epic-check-in.md
 - docs/DESIGN.md
 - _bmad-output/initiative-attendta/delivery-queue.md
+- _bmad-output/initiative-attendta/demo-mock-register.md
 
 ## Notes
 
-- Frontend only: load impeccable for implementation, critique the rendered scanner and polish before review.
-- Development checks: build/CSS and focused keyboard/result-state smoke; real camera, refusal/concurrency and hotspot tests belong to 4.4 and the finale, not a large mock-only test suite.
+- Demo phase (2026-11-06 demo rescope): frontend only. Use the real backend where a service method exists and demo data per `demo-mock-register.md` (adds rows M-05, M-06, M-07; uses M-04 from 1.13) where it does not; nothing on screen may show that data is demo data. Add or fill this ticket's register rows in the same pull request.
+- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.

@@ -16,18 +16,20 @@ tracker_status: backlog
 
 ## Description
 
-Fill 3.17's _CertificateLinkPartial/history contract with the member's pending/eligible/declined/issued/unavailable certificate presentation and an issued-only View/Download affordance. Use 1.13 isolated fixtures until 6.9 supplies the real owner query and 6.8 streams retained files; mark sample links visibly. Own only the certificate partial/scoped assets, not the My Events controller, pass or attendance partial. Use impeccable for implementation, critique and polish.
+Fill 3.17's _CertificateLinkPartial / Certificates tab with the member's pending, eligible, declined, issued and unavailable states and an issued-only View/Download. Until 6.9 and 6.8 exist the list is demo data (M-12) from the same demo store 6.12 issues into, and View/Download streams the same in-memory render. Own only the certificate partial and its scoped assets, not the My Events controller, pass or attendance partial.
 
 ## Requirements
 
-Verify: A Member switches to Certificates and distinguishes review versus issued states, with clear empty/unavailable feedback and no misleading official download for an unissued record. Keyboard, phone-width and independent history navigation work.
+Verify: A Member with an issued certificate in the demo store (seeded, or issued on the 6.12 ledger) opens Certificates, views and downloads the PDF, sees review states without a download, and an empty state when there is none; keyboard, phone width and independent paging work; nothing on screen says the data is demo data.
 
 ## References
 
 - parent — _bmad-output/initiative-attendta/tickets/epic-certificates/epic-certificates.md
 - docs/DESIGN.md
 - _bmad-output/initiative-attendta/delivery-queue.md
+- _bmad-output/initiative-attendta/demo-mock-register.md
 
 ## Notes
 
-- Frontend only: impeccable implementation, rendered critique and polish; build/CSS and a short tab/link/keyboard smoke. Real file authorization and retention cases run at the finale.
+- Demo phase (2026-11-06 demo rescope): frontend only. Use the real backend where a service method exists and demo data per `demo-mock-register.md` (rows M-12) where it does not; nothing on screen may show that data is demo data. Add or fill this ticket's register rows in the same pull request.
+- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.

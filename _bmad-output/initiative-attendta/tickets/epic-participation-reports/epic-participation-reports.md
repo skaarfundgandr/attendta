@@ -14,17 +14,23 @@ risk: medium
 
 ## Description
 
-Gives Management a per-Event participation report computed from canonical Registration, snapshot and attendance facts: status counts, attendees, No-shows, attendance rate, attendee distribution and paged detail rows. The report backend is not built yet; the epic now opens with the frontend slice 7.4 against Development-only mock data, and the finale builds 7.1–7.3 and replaces the mock.
+Gives Management a per-Event participation report computed from canonical Registration, snapshot and attendance facts: status counts, attendees, No-shows, attendance rate, attendee distribution and paged detail rows. The report backend is not built yet; the epic now opens with the frontend slice 7.4 against demo data per demo-mock-register.md, and the integration phase builds 7.1–7.3 and replaces the demo data.
 
 ## Outcome
 
 For the organization, participation evidence for advisers comes straight from recorded attendance, shown by the UJ-4 report figures.
 
+## Delivery (2026-11-06, demo rescope)
+
+- 7.4 (queue 60) is demo-critical: frontend per-event report with summary counts, rate, completed-only no-shows, breakdowns and paged detail table; reads demo data M-13 computed from real registrations and demo-store attendance/completion, with no visible sign in the UI.
+- 7.1–7.3 are integration tickets that replace M-13 in parts: 7.1 replaces the summary KPIs, 7.2 replaces the completed-only no-shows and breakdowns, and 7.3 replaces the paged detail rows and sets M-13 to removed.
+- This replaces the bullets below on Development-only, conspicuous mocks and per-ticket Impeccable critique and polish; critique and polish run in 8.15 and 8.12.
+
 ## Delivery (2026-11-06)
 
 - 7.4 is the frontend per-event report with summary breakdowns and participant table, built to `docs/DESIGN.md` after 1.13. It is a parent-owned frontend slice recorded here as the epic's UI order. Reason: the report is read-only and its layout can be agreed against mock figures while the aggregation backend is still missing.
-- The report backend (7.1–7.3) is missing, so 7.4 uses Development-only mock data with the same view-model/route contract: conspicuous, no real writes, no silent fallback, tracked removal in `delivery-queue.md`. The later backend entry 7.1 wires into 7.4. The finale removes the mock (8.11).
-- 7.4 is UI-facing and uses impeccable for implementation, rendered critique and polish per `AGENTS.md`.
+- The report backend (7.1–7.3) is missing, so 7.4 uses demo data per `demo-mock-register.md` (row M-13): no visible sign in the UI, no real writes, no silent fallback, tracked removal. The later backend tickets 7.1–7.3 replace the demo data; 8.11 removes the demo data seam.
+- Critique and polish run in 8.15 and 8.12; per-ticket Impeccable critique and polish do not run on 7.4.
 - Development checks are a clean build, a reproducible CSS build when views/styles change, and a manual smoke of the changed surface. Reports are read-only and have no high-risk mutation, so no focused guard regression is required at development time. Finale 8.5 (#78) authors/maps important report cases before 8.4 (#77) runs the combined suite; 8.6–8.8 record acceptance.
 - This epic has no refactor sweep; the final frontend review is 8.12 and backend hardening is 8.13.
 - Dependency note: 7.4 waits on 1.13 only; initial real report reads 7.1/7.2 are not gated on the whole check-in epic. Only 7.3 waits on 4.6 to pin final detail-row proof against real invalidated attendance. These are story-level dependencies; epic-level waits in Notes gate backend completion only.
@@ -79,3 +85,4 @@ For the organization, participation evidence for advisers comes straight from re
 - Decision: 2026-11-06 — no fixed future human owner. Historical attribution above is preserved as history; claims from `delivery-queue.md` win over the addendum assignment.
 - Decision: 2026-11-06 — 7.4 is UI-facing and uses impeccable for implementation, rendered critique and polish. Development checks are minimal (build, reproducible CSS, manual smoke); reports are read-only, so no focused guard regression is required. Finale 8.5 (#78) authors/maps important cases before 8.4 (#77) runs the combined suite, then 8.6–8.8 acceptance.
 - Note: 2026-11-06 — no container status change and no implementation starts from this planning edit.
+- Decision: 2026-11-06 — demo rescope: the client demo is close, so frontend-only demo work comes first against demo data recorded in `demo-mock-register.md` with no visible sign in the UI. 7.4 is demo-critical (queue 60) and reads demo data M-13; 7.1–7.3 are integration tickets replacing M-13 in parts until 7.3 sets M-13 removed. Per-ticket Impeccable critique and polish are replaced by 8.15 demo rehearsal and 8.12.

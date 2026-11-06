@@ -22,8 +22,8 @@ For Members and Officers, certificate eligibility rests on recorded attendance a
 
 ## Delivery (2026-11-06, demo rescope)
 
-- Demo-critical frontend slices 6.12 (queue 50) and 6.13 (queue 90) build the officer certificate ledger and member certificate history against the real template, renderer and signatory, using demo data per `demo-mock-register.md` for missing review, issuance and download contracts (6.12 adds M-10 and M-11; 6.13 adds M-12). Neither screen displays any indication that data is demo data.
-- Integration tickets 6.4 (M-10 creation), 6.6 (M-10 queue and decisions; sets M-10 removed), 6.7 (M-11 issuance), 6.8 (M-11 download; sets M-11 removed) and 6.9 (M-12 member query; sets M-12 removed) replace each mock with real backend implementation with no visible change on screen; 6.5 adds the invalidation guard before issuance.
+- Demo-critical frontend slices 6.12 (queue 50) and 6.13 (queue 90) build the officer certificate ledger and member certificate history against the real template, renderer and signatory, using demo data per `demo-mock-register.md` for missing review, issuance and download contracts (6.12 adds M-10a, M-10b, M-11a and M-11b; 6.13 adds M-12). Neither screen displays any indication that data is demo data.
+- Integration tickets 6.4 (M-10a), 6.6 (M-10b), 6.7 (M-11a), 6.8 (M-11b) and 6.9 (M-12) replace each mock with real backend implementation with no visible change on screen; 6.5 replaces the 1.14 store's invalidation-to-review rule before issuance.
 - Development checks are a clean build, CSS build when views or styles change, and one look with `DemoData__Enabled=true`; no new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass. Critique and polish run once in 8.15 and once in 8.12. This replaces the earlier mock and per-ticket Impeccable bullets below.
 
 ## Delivery (2026-11-06)
@@ -103,3 +103,4 @@ The bullets below stand where the demo rescope above does not replace them.
 - Decision: 2026-11-06 — 6.11 stays a focused backend cleanup at the finale, not a repeated whole-app/UI audit. Frontend review is 8.12; backend hardening is 8.13.
 - Note: 2026-11-06 — no container status change and no implementation starts from this planning edit.
 - Decision: 2026-11-06 — demo rescope: 6.12 (queue 50) and 6.13 (queue 90) are demo-critical frontend slices using demo data (M-10, M-11, M-12) with no visible signs on screen; integration tickets 6.4–6.9 replace each mock with real backend implementation and remove their register rows. Done checks are build, CSS build, and screen check with demo data on; Impeccable critique and polish run once in 8.15 and 8.12.
+- Decision: 2026-11-06 — review of the demo rescope: Split M-10 and M-11 into lettered rows with single removers, add 1.14 demo-seam dependency, and clarify that 6.5 replaces the 1.14 store invalidation rule.

@@ -33,4 +33,4 @@ Verify: A Member follows the compact profile action to My Passes without a dead 
 
 - Existing issue #129 is reused and its shipped #132/#134 acceptance is preserved.
 - Demo phase (2026-11-06 demo rescope): frontend only, real backend only; this ticket adds no demo data.
-- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.
+- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique, polish and the full Verify line run once in 8.15.

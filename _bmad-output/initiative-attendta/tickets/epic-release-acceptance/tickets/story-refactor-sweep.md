@@ -15,7 +15,7 @@ tracker_status: backlog
 
 ## Description
 
-Pre-acceptance release cleanup only: remove enabled throwaway harnesses and any leftover demo data configuration, check setup/run documentation and secret hygiene, and retain useful evidence. Backend hardening is 8.13 and rendered frontend critique/polish is 8.12. Finish code/config cleanup BEFORE acceptance runs and the release PR, not after main is released.
+Pre-acceptance release cleanup only: remove enabled throwaway harnesses, confirm no demo data configuration remains in deployment settings, check setup/run documentation and secret hygiene, and retain useful evidence. Backend hardening is 8.13 and rendered frontend critique/polish is 8.12. Finish code/config cleanup BEFORE acceptance runs and the release PR, not after main is released.
 
 ## Requirements
 

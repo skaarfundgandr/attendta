@@ -40,4 +40,4 @@ Verify: An Officer selects a real completed event and sees status counts, Confir
 ## Notes
 
 - Wire the 7.4 presentation contract using canonical mapped attendance and ParticipationFacts; read queries can be built without waiting for the scanner/invalidation UI. Full real-attendance verification remains mandatory in 8.11. Final no-show/rate presentation follows authoritative SPEC/docs/DESIGN.md: completed, non-cancelled events; zero denominator N/A.
-- Removes demo data M-13 (summary part) (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-13a (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

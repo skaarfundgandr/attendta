@@ -37,4 +37,4 @@ Verify: An Officer invalidates an Attendance Record after entering a reason and 
 
 ## Notes
 
-- Removes demo data M-07 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-07 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. From this commit invalidation is real; 6.5's handler later replaces the store's invalidation-to-review rule (register rule 12). The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

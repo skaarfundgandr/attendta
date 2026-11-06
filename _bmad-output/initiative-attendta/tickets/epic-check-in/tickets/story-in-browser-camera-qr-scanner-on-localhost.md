@@ -40,4 +40,4 @@ Verify: An Officer opens the scanner on localhost on a laptop webcam, points it 
 ## Notes
 
 - Wire 4.11's camera adapter and decoder; do not rebuild the screen or choose another decoder. Keep development testing to one real scan, a repeat and camera-denied fallback; the full matrix and phone test run at the finale.
-- Removes demo data M-05 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes no register row (2026-11-06 review): 4.3 removes M-05; this ticket verifies 4.11's camera adapter against the real engine.

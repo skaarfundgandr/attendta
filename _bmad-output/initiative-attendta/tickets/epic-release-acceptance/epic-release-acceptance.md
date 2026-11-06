@@ -22,11 +22,11 @@ For the client and approver, the MVP is shown to meet every acceptance item, sig
 
 ## Delivery (2026-11-06, demo rescope)
 
-- 8.15 (was 1.12, issue #135) is the demo rehearsal that closes the demo phase: a person walks the demo script on demo data in every role, runs the one Impeccable critique and polish pass of the demo phase, and writes `demo-script.md`. It sits in this epic because it waits on demo screens from epics 1, 3, 4, 5, 6 and 7.
+- 8.15 (was 1.12, issue #135) is the demo rehearsal that closes the demo phase: a person walks the demo script on demo data in every role, runs the one Impeccable critique and polish pass of the demo phase, checks each demo-phase ticket's full Verify line once, and writes `demo-script.md`. It sits in this epic because it waits on 1.13, 1.14 and demo screens from epics 3, 4, 5, 6 and 7.
 - The finale phase removes every piece of demo data added during the demo phase, proves complete real integrations against one coherent database, polishes the integrated application, and executes acceptance.
-- 8.11 is the mock removal gate: it confirms every row M-02 to M-15 in `demo-mock-register.md` is removed by its integration ticket, deletes the demo store, switch and folder (M-01), and proves all real integrations end to end. 2.11 joins the finale before 8.12 to accept the three centered record editors against `docs/DESIGN.md`.
+- 8.13 deletes the demo seam (register row M-01) once every other register row is removed; 8.11 is the verify-only gate that confirms every row in `demo-mock-register.md` (M-01 to M-15b) is `removed` with its commit, proves the demo seam is gone with checks that fail if any part remains, and proves all real integrations end to end. 2.11 joins the finale before 8.12 to accept the three centered record editors against `docs/DESIGN.md`.
 - 8.12 runs the single whole-app frontend walkthrough, refactor and Impeccable polish pass against `docs/DESIGN.md` and the 8.15 demo rehearsal findings; individual demo-phase and integration tickets do not run per-ticket critique or polish.
-- 8.10 pre-acceptance cleanup removes any leftover demo data configuration and throwaway harnesses before the 8.5/8.4 test execution and 8.6–8.8 acceptance run. This replaces the earlier mock and demo data removal bullets below.
+- 8.10 pre-acceptance cleanup removes enabled throwaway harnesses and confirms no demo data configuration remains in deployment settings before the 8.5/8.4 test execution and 8.6–8.8 acceptance run. This replaces the earlier mock and demo data removal bullets below.
 
 ## Delivery (2026-11-06)
 
@@ -98,3 +98,4 @@ The bullets below stand where the demo rescope above does not replace them.
 - Note: 2026-11-06 — no container status change and no implementation starts from this planning edit.
 - Decision: 2026-11-06 — demo rescope: 2.11 joins the finale before 8.12; 8.11 proves the demo-mock-register empty and removes the demo store and switch; 8.12 covers the single integrated Impeccable pass incorporating 8.15 demo rehearsal findings; 8.10 removes leftover demo configuration before acceptance.
 - Decision: 2026-11-06 — demo rescope: 8.15 joins this epic from epic-platform-access (old 1.12) as the closing demo rehearsal, first in build order among the open entries; it waits on 1.13 and the demo-critical surfaces 3.16, 3.17, 4.10, 4.11, 4.12, 5.11, 6.12, 6.13 and 7.4.
+- Decision: 2026-11-06 — review of the demo rescope: 8.15 waits on 1.14 and checks each demo ticket's full Verify line, 8.13 deletes demo seam M-01 once all other rows are removed, 8.11 becomes verify-only with failing startup and search checks, and 8.10 confirms no demo configuration remains in deployment settings.

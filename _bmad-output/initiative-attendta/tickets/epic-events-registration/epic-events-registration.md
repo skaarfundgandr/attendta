@@ -22,7 +22,7 @@ For Officers and Members, seats are allocated by explicit, fair review instead o
 
 ## Delivery (2026-11-06, demo rescope)
 
-- 3.16 (queue 20) and 3.17 (queue 30) are demo-critical: 3.16 builds the officer dossier and controls (using demo commands M-04 and M-09 provided by 1.13); 3.17 builds the My Events host and extension slots with demo registrations (adds row M-02). 3.18 (queue 120) is demo-polish against the real backend with no demo data.
+- 3.16 (queue 20) and 3.17 (queue 30) are demo-critical: 3.16 builds the officer dossier and controls (using demo commands M-04 and M-09 provided by 1.14); 3.17 builds the My Events host and extension slots with demo registrations (adds row M-02). 3.18 (queue 120) is demo-polish against the real backend with no demo data.
 - 3.12 (queue 210) and 3.13 (queue 200) are integration tickets that replace demo data: 3.12 implements the real completion transaction and hook (removes M-09); 3.13 implements the real owner-scoped registrations query (removes M-02).
 - This replaces the bullets below on Development-only, conspicuous mocks and per-ticket Impeccable critique and polish; critique and polish run in 8.15 and 8.12.
 
@@ -106,3 +106,4 @@ For Officers and Members, seats are allocated by explicit, fair review instead o
 - Decision: 2026-11-06 — 3.14 stays a focused backend cleanup at the finale, not a repeated whole-app/UI audit. Frontend review is 8.12; backend hardening is 8.13.
 - Historical coordination at container read (2026-11-06): PR #133 (event start cutoff, 3.10) was merged at `997f290`; issue #39 was then pending closure. The parent has since closed #39 with the merge evidence. No container status change and no implementation starts from this planning edit.
 - Decision: 2026-11-06 — demo rescope: the client demo is close, so frontend-only demo work comes first against the real backend or demo data recorded in `demo-mock-register.md` with no visible sign in the UI. 3.16 (queue 20) and 3.17 (queue 30) are demo-critical (using M-04/M-09 and adding M-02), 3.18 (queue 120) is demo-polish with no demo data, and 3.12/3.13 are integration tickets removing M-09 and M-02. Per-ticket Impeccable critique and polish are replaced by 8.15 demo rehearsal and 8.12.
+- Decision: 2026-11-06 — review of the demo rescope: 3.16 and 3.17 wait on 1.13 and 1.14, 3.16 uses M-04/M-09 from 1.14 and checks completion refusal rules, 3.17 fills the 1.13 host while keeping extension slots, and 3.12 notes the Completed status overlay.

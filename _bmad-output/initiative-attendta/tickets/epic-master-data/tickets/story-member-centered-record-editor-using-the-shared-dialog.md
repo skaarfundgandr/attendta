@@ -16,7 +16,7 @@ tracker_status: backlog
 
 ## Description
 
-Apply 2.12's reusable record dialog to Member edit using the current real Member service. Preserve read-only email, academic fields, membership type, student-number correction reason and errors; do not add standalone creation or implement membership-status mutations. Leave the membership access actions that 5.11 adds as their own partial in the Members list rows where they are; change only the Edit trigger and the edit form.
+Apply 2.12's reusable record dialog to Member edit using the current real Member service. Preserve read-only email, academic fields, membership type, student-number correction reason and errors; do not add standalone creation or implement membership-status mutations. Leave the access-action slot partial that 1.13 placed in each Members list row (5.11 fills it) untouched; change only the Edit trigger and the edit form.
 
 ## Requirements
 
@@ -32,4 +32,4 @@ Verify: An Officer edits a Member in a centered dialog, sees a required correcti
 ## Notes
 
 - Demo phase (2026-11-06 demo rescope): frontend only, real backend only; this ticket adds no demo data.
-- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.
+- Done check: `dotnet build`, `npm run css:build` when views or styles change, and one look at the changed screen with `DemoData__Enabled=true`. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique, polish and the full Verify line run once in 8.15.

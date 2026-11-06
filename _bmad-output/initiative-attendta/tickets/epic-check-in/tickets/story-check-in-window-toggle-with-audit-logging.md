@@ -37,4 +37,4 @@ Verify: An Officer opens Check-in on a Published Event and sees it Open with act
 
 ## Notes
 
-- Removes demo data M-04 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-04 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, including the shared check-in control partial and the open-flag overlay on event reads, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

@@ -4,7 +4,7 @@ type: story
 title: "Check-in validation engine and attendance recording"
 parent: epic-check-in
 covers: [R4, R8]
-after: [2, 3.3, 3.7]
+after: [1, 2, "3.3", "3.7"]
 hitl: false
 risk: high
 tracker_id: "46"
@@ -37,4 +37,5 @@ Verify: Focused development check: a valid scan commits one attendance/audit row
 
 ## Notes
 
-- Removes demo data M-05 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Waits on 4.1 so passes carry real tokens before the real engine validates them.
+- Removes demo data M-05 (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. From this commit the M-10a demo reviews read real attendance (register rule 12). The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

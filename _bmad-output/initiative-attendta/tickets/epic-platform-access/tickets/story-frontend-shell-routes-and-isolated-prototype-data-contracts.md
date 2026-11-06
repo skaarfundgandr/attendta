@@ -5,7 +5,7 @@ title: "Frontend shell routes and isolated prototype data contracts"
 parent: epic-platform-access
 after: [9]
 hitl: false
-risk: medium
+risk: low
 tracker_id: "136"
 remote: "https://github.com/rainyDayssss/AttendTa/issues/136"
 tracker_status: backlog
@@ -15,11 +15,11 @@ tracker_status: backlog
 
 ## Description
 
-After a short inventory of the current routes and screens against docs/DESIGN.md, prepare the shared role-appropriate navigation, a route for every screen the demo needs (My Events with passes, attendance and certificates; the officer event dossier; the door scanner; the certificate ledger and viewer; the participation report; the account and membership access dialogs) and typed screen contracts. Build the demo data seam from demo-mock-register.md row M-01: the DemoData:Enabled switch read in any environment and off in committed settings; one in-memory demo store keyed by real record ids that holds the shared demo state several surfaces read (event check-in open and completed state, pass tokens, attendance records, certificate reviews and issues, account and membership status); one WebApp folder for demo providers with a registration file per surface, all called from one method, so slices do not edit the same lines; and a start-up seed on real records so every demo screen opens populated: a published event with check-in open and confirmed registrations, a started event ready to complete, and a completed event with check-ins (one invalidated), a pending, a declined and an issued certificate. It also provides the two event-state demo commands several screens call, open/close check-in (M-04) and complete event (M-09), plus two shared partials: the event selector the scanner, ledger and report use, and the open/close check-in control the dossier and scanner use. Surface tickets add their own provider methods over this store; they do not change its shape without a note in the register. Write the route, partial, contract, real-versus-demo source and file-boundary map into the register before the five surface tickets start. Prepare feature-scoped asset seams so later UI tickets do not all edit the shell, Startup.DI.cs or global JavaScript. Preserve Razor/Tailwind, the current shell and docs/DESIGN.md.
+After a short inventory of the current routes and screens against docs/DESIGN.md, prepare the shared role-appropriate navigation and, for every screen the demo needs, the route, an authorized controller action returning its view with a typed screen contract, and an empty view: My Events, the officer event dossier, the door scanner, the certificate ledger and viewer, the participation report, and the account and membership access dialogs. Surface tickets fill those views and change only their own action's model loading. Create the My Events host with Registrations, Attendance and Certificates tabs and three empty slot partials (_PassPartial on each registration card, the attendance-history partial and _CertificateLinkPartial) that render nothing visible until their owners fill them; 3.17 fills the host and the Registrations tab, 4.10, 4.12 and 6.13 fill only their partials. Add two empty access-action slot partials, one in each Accounts list row and one in each Members list row, for 5.11 to fill; 2.13 leaves them in place. Add the shared event selector partial the scanner, ledger and report use. Prepare feature-scoped asset seams so later UI tickets do not all edit the shell or global JavaScript. Preserve Razor/Tailwind, the current shell and docs/DESIGN.md. The demo data seam is 1.14; this ticket adds no demo data.
 
 ## Requirements
 
-Verify: Every new navigation link opens an authorized screen shell for the right role, not a dead link. With DemoData__Enabled=true the seeded screens open populated and nothing rendered says the data is demo data; with it unset the same screens show their normal empty state and the existing test suites still pass. No demo command writes SQL rows, stored files or Activity Log entries. The register lists each screen's real and demo sources with its removing ticket, and the five demo-critical surface tickets can start.
+Verify: Every new navigation link opens an authorized screen for the right role, not a dead link or an error page; another role is refused. The My Events tabs and the Accounts and Members rows render with their empty slots and no placeholder copy. The existing test suites still pass.
 
 ## References
 
@@ -30,7 +30,7 @@ Verify: Every new navigation link opens an authorized screen shell for the right
 
 ## Notes
 
-- Demo phase (2026-11-06 demo rescope): frontend only. Use the real backend where a service method exists and demo data per demo-mock-register.md (rows M-01, M-04, M-09) where it does not; nothing on screen may show that data is demo data. Add or fill this ticket's register rows in the same pull request.
-- Done check: dotnet build, npm run css:build when views or styles change, and one look at the changed screen with DemoData__Enabled=true. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique and polish run in 8.15.
-- Decision: 2026-11-06 — demo rescope: no longer waits on the old 1.12 walkthrough (now the 8.15 demo rehearsal) and absorbs its route inventory; the Development-only, visibly labelled fixture mechanism is replaced by the demo data rules in demo-mock-register.md. The title is kept to match issue #136.
+- Demo phase (2026-11-06 demo rescope): frontend only, real backend only; this ticket adds no demo data. 1.14 runs alongside it.
+- Done check: dotnet build, npm run css:build when views or styles change, and one look at the changed screen with DemoData__Enabled=true. No new automated tests, no per-ticket Impeccable critique or polish and no separate code-review pass; the pull request keeps green existing CI and one peer approval. Critique, polish and the full Verify line run once in 8.15.
+- Decision: 2026-11-06 — demo rescope: no longer waits on the old 1.12 walkthrough (now the 8.15 demo rehearsal) and absorbs its route inventory. After review the demo data seam moved to 1.14, so the shell and the seam can run in parallel and the cosmetic tickets need only this one. The title is kept to match issue #136.
 - The final real-data integration gate is 8.11; demo-phase delivery never closes the existing functional integration tickets.

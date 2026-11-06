@@ -40,4 +40,4 @@ Verify: Navigate through 25-row pages of participant detail rows on a completed 
 ## Notes
 
 - Summary/distribution query work starts earlier; this final real-detail integration verifies actual invalidation effects from 4.6, pinning the epic's attendance handoff without gating the frontend or initial report reads.
-- Removes demo data M-13 (detail rows part; 7.3 sets M-13 to removed once all three parts are real) (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-13c (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

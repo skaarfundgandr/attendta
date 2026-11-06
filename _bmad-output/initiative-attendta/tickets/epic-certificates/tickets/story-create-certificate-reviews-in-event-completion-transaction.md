@@ -39,4 +39,4 @@ Verify: Completing an event creates pending_approval review rows for every Regis
 ## Notes
 
 - Use the mapped attendance table and canonical Valid Attendance fact; implementation can start once the completion hook exists without waiting for scanner UI or the recording engine. Final integration 8.11 still requires real attendance end to end.
-- Removes demo data M-10 (creation part) (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-10a (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

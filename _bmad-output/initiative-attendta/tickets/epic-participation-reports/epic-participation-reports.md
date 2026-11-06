@@ -22,14 +22,14 @@ For the organization, participation evidence for advisers comes straight from re
 
 ## Delivery (2026-11-06, demo rescope)
 
-- 7.4 (queue 60) is demo-critical: frontend per-event report with summary counts, rate, completed-only no-shows, breakdowns and paged detail table; reads demo data M-13 computed from real registrations and demo-store attendance/completion, with no visible sign in the UI.
-- 7.1–7.3 are integration tickets that replace M-13 in parts: 7.1 replaces the summary KPIs, 7.2 replaces the completed-only no-shows and breakdowns, and 7.3 replaces the paged detail rows and sets M-13 to removed.
+- 7.4 (queue 60) is demo-critical: frontend per-event report with summary counts, rate, completed-only no-shows, breakdowns and paged detail table; reads demo data M-13a, M-13b, M-13c computed from real registrations and demo-store attendance/completion, with no visible sign in the UI.
+- 7.1–7.3 are integration tickets that replace M-13a, M-13b, M-13c: 7.1 replaces the summary KPIs (removes M-13a), 7.2 replaces the completed-only no-shows and breakdowns (removes M-13b), and 7.3 replaces the paged detail rows (removes M-13c).
 - This replaces the bullets below on Development-only, conspicuous mocks and per-ticket Impeccable critique and polish; critique and polish run in 8.15 and 8.12.
 
 ## Delivery (2026-11-06)
 
-- 7.4 is the frontend per-event report with summary breakdowns and participant table, built to `docs/DESIGN.md` after 1.13. It is a parent-owned frontend slice recorded here as the epic's UI order. Reason: the report is read-only and its layout can be agreed against mock figures while the aggregation backend is still missing.
-- The report backend (7.1–7.3) is missing, so 7.4 uses demo data per `demo-mock-register.md` (row M-13): no visible sign in the UI, no real writes, no silent fallback, tracked removal. The later backend tickets 7.1–7.3 replace the demo data; 8.11 removes the demo data seam.
+- 7.4 is the frontend per-event report with summary breakdowns and participant table, built to `docs/DESIGN.md` after 1.13 and 1.14. It is a parent-owned frontend slice recorded here as the epic's UI order. Reason: the report is read-only and its layout can be agreed against demo figures while the aggregation backend is still missing.
+- The report backend (7.1–7.3) is missing, so 7.4 uses demo data per `demo-mock-register.md` (rows M-13a, M-13b, M-13c): no visible sign in the UI, no real writes, no silent fallback, tracked removal. 7.1, 7.2 and 7.3 each remove one of those rows; 8.13 removes the demo data seam and 8.11 verifies none remains.
 - Critique and polish run in 8.15 and 8.12; per-ticket Impeccable critique and polish do not run on 7.4.
 - Development checks are a clean build, a reproducible CSS build when views/styles change, and a manual smoke of the changed surface. Reports are read-only and have no high-risk mutation, so no focused guard regression is required at development time. Finale 8.5 (#78) authors/maps important report cases before 8.4 (#77) runs the combined suite; 8.6–8.8 record acceptance.
 - This epic has no refactor sweep; the final frontend review is 8.12 and backend hardening is 8.13.
@@ -86,3 +86,4 @@ For the organization, participation evidence for advisers comes straight from re
 - Decision: 2026-11-06 — 7.4 is UI-facing and uses impeccable for implementation, rendered critique and polish. Development checks are minimal (build, reproducible CSS, manual smoke); reports are read-only, so no focused guard regression is required. Finale 8.5 (#78) authors/maps important cases before 8.4 (#77) runs the combined suite, then 8.6–8.8 acceptance.
 - Note: 2026-11-06 — no container status change and no implementation starts from this planning edit.
 - Decision: 2026-11-06 — demo rescope: the client demo is close, so frontend-only demo work comes first against demo data recorded in `demo-mock-register.md` with no visible sign in the UI. 7.4 is demo-critical (queue 60) and reads demo data M-13; 7.1–7.3 are integration tickets replacing M-13 in parts until 7.3 sets M-13 removed. Per-ticket Impeccable critique and polish are replaced by 8.15 demo rehearsal and 8.12.
+- Decision: 2026-11-06 — review of the demo rescope: 7.4 waits on 1.13 and 1.14 and verifies against seeded data only; M-13 is split into M-13a (7.1), M-13b (7.2) and M-13c (7.3) with each ticket the sole remover.

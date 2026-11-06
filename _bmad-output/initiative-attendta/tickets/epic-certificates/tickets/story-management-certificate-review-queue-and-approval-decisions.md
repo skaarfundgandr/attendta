@@ -39,4 +39,4 @@ Verify: An Officer approves a pending review to mark it eligible and declines an
 ## Notes
 
 - Wire the 6.12 ledger contract with real read/decision sources, not a second screen. Review commands recheck Valid Attendance; 6.5 protects invalidation and must be present before issuance in 6.7.
-- Removes demo data M-10 (queue and decisions; 6.6 sets M-10 removed) (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.
+- Removes demo data M-10b (2026-11-06 demo rescope): implement the real source behind the contract the demo provider serves, delete the provider classes and their registration, and set the rows to `removed` with the commit in `demo-mock-register.md`. The screen should not change visibly. No per-ticket Impeccable critique or polish; 8.12 covers it.

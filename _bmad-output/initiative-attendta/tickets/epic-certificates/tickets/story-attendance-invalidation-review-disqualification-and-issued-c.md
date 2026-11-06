@@ -38,4 +38,4 @@ Verify: Invalidating an attendance record whose review is pending_approval or el
 
 ## Notes
 
-- No register row of its own; it must be in place before 6.7 removes M-11.
+- No register row of its own (2026-11-06 review): it replaces the 1.14 store's invalidation-to-review rule and must be in place before 6.7 removes M-11a.
